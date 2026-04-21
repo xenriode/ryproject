@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Rayyan Adam Alfatih</title>
+    <style>
+        /* Gaya Dasar */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            color: #fff;
+            /* Latar Belakang */
+            background-image: url('https://69d45ce76a5d9ea952a754f8.imgix.net/AI%20Enhancer-Ultra%20HD-WEPE.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            overflow: hidden; /* Mencegah gulir agar animasi liquid kaca berfungsi penuh */
+        }
+
+        /* Container untuk Konten */
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative; /* Penting untuk efek kaca cair */
+        }
+
+        /* Efek Kaca Cair/Liquid Glass */
+        .glass-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            background-color: rgba(255, 255, 255, 0.05); /* Sedikit warna untuk tekstur */
+            border: 1px solid rgba(255, 255, 255, 0.1); /* Batas halus */
+            z-index: 1; /* Di bawah konten, di atas latar belakang */
+        }
+
+        /* Bagian Konten Kiri */
+        .content {
+            flex: 1;
+            padding-right: 40px;
+            z-index: 2; /* Di atas kaca cair */
+        }
+
+        /* Logo RyannProject */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .logo-ry {
+            font-family: 'Times New Roman', Times, serif; /* Gaya tanda tangan */
+            font-size: 3em;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .logo-text {
+            font-size: 1.2em;
+            color: rgba(255, 255, 255, 0.8);
+            margin-left: 10px;
+        }
+
+        /* Judul Nama */
+        .name {
+            font-size: 2.5em;
+            margin: 0;
+            margin-bottom: 15px;
+            opacity: 0; /* Untuk animasi muncul */
+            animation: fadeIn 1s ease-out forwards;
+            animation-delay: 0.2s;
+        }
+
+        /* Deskripsi Diri */
+        .description {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: rgba(255, 255, 255, 0.9);
+            opacity: 0; /* Untuk animasi muncul */
+            animation: fadeIn 1s ease-out forwards;
+            animation-delay: 0.5s;
+        }
+
+        /* Bagian Gambar Profil Kanan */
+        .profile-pic-container {
+            width: 300px;
+            height: 300px;
+            position: relative;
+            z-index: 2; /* Di atas kaca cair */
+            opacity: 0; /* Untuk animasi muncul */
+            animation: slideInFromRight 1s ease-out forwards;
+            animation-delay: 0.8s;
+        }
+
+        .profile-pic {
+            width: 100%;
+            height: 100%;
+            background-image: url('https://69d45ce76a5d9ea952a754f8.imgix.net/WhatsApp%20Image%202025-11-20%20at%2008.43.06_5f4972ed%204.png');
+            background-size: cover;
+            background-position: center;
+            border-radius: 20px; /* Sudut melengkung */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Bayangan profil */
+        }
+
+        /* Animasi */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInFromRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Responsif */
+        @media (max-width: 900px) {
+            .container {
+                flex-direction: column-reverse; /* Profil di atas konten pada layar kecil */
+                width: 90%;
+            }
+
+            .content {
+                padding-right: 0;
+                margin-top: 30px;
+                text-align: center; /* Teks tengah */
+            }
+
+            .logo-container {
+                justify-content: center;
+            }
+
+            .profile-pic-container {
+                width: 200px;
+                height: 200px;
+                margin-top: -100px; /* Tumpang tindih sedikit untuk efek */
+                animation: slideInFromTop 1s ease-out forwards;
+                animation-delay: 0.5s;
+            }
+
+            .description {
+                margin-bottom: 0;
+            }
+        }
+
+        @keyframes slideInFromTop {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="glass-overlay"></div>
+
+        <div class="content">
+            <div class="logo-container">
+                <span class="logo-ry">Ry</span>
+                <span class="logo-text">RyannProject</span>
+            </div>
+            <h1 class="name">Rayyan Adam Alfatih</h1>
+            <p class="description">
+                I'm a Grade 8 student at IDN Boarding School Pamijahan, based in Pamijahan.
+                Passionate about coding, UI/UX design, and video editing.
+                I also explore electronics and technology as part of my learning journey.
+                Always eager to build, create, and improve my skills every day.
+            </p>
+        </div>
+
+        <div class="profile-pic-container">
+            <div class="profile-pic"></div>
+        </div>
+    </div>
+</body>
+</html>
